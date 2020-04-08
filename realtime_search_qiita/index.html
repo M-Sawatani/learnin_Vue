@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Qiita Real time search</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <h1 class="uk-heading-medium">Qiita Real time search</h1>
+    <div id="app">
+      <p class="uk-margin">
+        <input
+          class="uk-input uk-form-width-medium"
+          type="text"
+          v-model="keyword"
+        />
+        <button
+          class="uk-button uk-button-default"
+          v-if="canClear"
+          v-on:click="deleteKeyword"
+        >
+          クリア
+        </button>
+        <button class="uk-button uk-button-default" disabled v-else>
+          クリア
+        </button>
+      </p>
+      <p class="uk-margin">{{ message }}</p>
+      <ul class="uk-margin">
+        <li v-for="item in items">
+          <a :href="item.url">{{ item.title }}</a>
+          <span uk-icon="icon: heart; ratio: 1"></span>
+          {{ item.likes_count }}いいね！
+        </li>
+      </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.19.2/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit-icons.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
