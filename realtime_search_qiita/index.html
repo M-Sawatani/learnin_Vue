@@ -20,12 +20,9 @@
         />
         <button
           class="uk-button uk-button-default"
-          v-if="canClear"
           v-on:click="deleteKeyword"
+          :disabled="!activateClear"
         >
-          クリア
-        </button>
-        <button class="uk-button uk-button-default" disabled v-else>
           クリア
         </button>
       </p>

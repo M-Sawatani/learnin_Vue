@@ -3,8 +3,18 @@ var app = new Vue({
   data: {
     items: null, // APIから取得した検索結果格納用
     keyword: "", // ユーザーが入力した検索キーワード
-    message: "", // ユーザーに表示するメッセージ
-    canClear: false
+    message: "" // ユーザーに表示するメッセージ
+  },
+  computed: {
+    activateClear: {
+      get: function() {
+        if (this.keyword === "") {
+          return false;
+        } else {
+          return true;
+        }
+      }
+    }
   },
   watch: {
     keyword: function(newval, oldval) {
@@ -24,10 +34,8 @@ var app = new Vue({
       if (this.keyword === "") {
         this.items = null;
         this.message = "";
-        this.canClear = false;
         return;
       }
-      this.canClear = true;
       this.message = "Loading...";
       var vm = this;
       var params = { page: 1, per_page: 20, query: this.keyword };
@@ -49,7 +57,6 @@ var app = new Vue({
       this.keyword = "";
       this.items = null;
       this.message = "";
-      this.canClear = false;
     }
   }
 });
