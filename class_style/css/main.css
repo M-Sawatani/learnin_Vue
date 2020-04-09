@@ -1,0 +1,15 @@
+.large {
+  font-size: 36px;
+}
+
+.text-danger {
+  color: #f0506e;
+}
+
+.text-prime {
+  color: #1e87f0;
+}
+
+.bg-gray {
+  background-color: #ccc;
+}
