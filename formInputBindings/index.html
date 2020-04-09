@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Form Input Bindings</title>
+  </head>
+  <body>
+    <h1>Form Input Bindings</h1>
+    <div id="app" uk-grid>
+      <div class="uk-card uk-card-default uk-card-body uk-width-1-3@l">
+        <div class="uk-card-badge uk-label">textarea</div>
+        <h2 class="uk-card-title">textarea</h3>
+          <pre>{{ message }}</pre>
+          <textarea name="" id="" cols="58" rows="10" v-model='message'></textarea>
+          <hr class='uk-margin-small'>
+          <ul class="uk-list uk-list-bullet">
+            <li>textareaにマスタッシュ構文は使えない</li>
+            <li>textareaに挿入する際は、v-modelを使うこと！</li>
+            <li>v-modelは、value / checked / selected属性の初期値を無視する</li>
+          </ul>
+      </div>
+
+      <div class="uk-card uk-card-default uk-card-body uk-width-1-3@l">
+        <div class="uk-card-badge uk-label">checkbox</div>
+        <h2 class="uk-card-title">checkbox1</h3>
+          <p>
+            <input type="checkbox" class='uk-checkbox' v-model='checked'>
+            <label for="checkbox">{{ checked }}</label>
+          </p>
+          <hr class='uk-margin-small'>
+          <ul class="uk-list uk-list-bullet">
+            <li>単体のcheckbox: boolean値</li>
+          </ul>
+      </div>
+
+      <div class="uk-card uk-card-default uk-card-body uk-width-1-3@l">
+        <div class="uk-card-badge uk-label">checkbox</div>
+        <h2 class="uk-card-title">checkbox2</h3>
+          <p>
+            <input type="checkbox" id='red' class='uk-checkbox' value='Red' v-model='colors'>
+            <label for="red">Red</label>
+            <input type="checkbox" id='green' class='uk-checkbox' value='Green' v-model='colors'>
+            <label for="green">Green</label>
+            <input type="checkbox" id='blue' class='uk-checkbox' value='Blue' v-model='colors'>
+            <label for="blue">Blue</label>
+          </p>
+          <pre>{{ colors }}</pre>
+          <hr class='uk-margin-small'>
+          <ul class="uk-list uk-list-bullet">
+            <li>複数のcheckbox: 配列</li>
+          </ul>
+      </div>
+
+      <div class="uk-card uk-card-default uk-card-body uk-width-1-3@l">
+        <div class="uk-card-badge uk-label">radio</div>
+        <h2 class="uk-card-title">radio</h3>
+          <p>
+            <input type="radio" id='orange' class='uk-radio' value='Orange' v-model='color'>
+            <label for="orange">Orange</label>
+            <input type="radio" id='yellow' class='uk-radio' value='Yellow' v-model='color'>
+            <label for="yellow">Yellow</label>
+            <input type="radio" id='purple' class='uk-radio' value='Purple' v-model='color'>
+            <label for="purple">Purple</label>
+          </p>
+          <pre>{{ color }}</pre>
+          <hr class='uk-margin-small'>
+          <ul class="uk-list uk-list-bullet">
+            <li>raido: 文字列</li>
+          </ul>
+      </div>
+
+      <div class="uk-card uk-card-default uk-card-body uk-width-1-3@l">
+        <div class="uk-card-badge uk-label">dropdown</div>
+        <h2 class="uk-card-title">dropdown1</h3>
+          <select id='fruits1' class='uk-select' v-model='fruit'>
+            <option value="grape">Grape</option>
+            <option value="apple">Apple</option>
+            <option value="kiwi">Kiwi</option>
+          </select>
+          <pre>{{ fruit }}</pre>
+          <hr class='uk-margin-small'>
+          <ul class="uk-list uk-list-bullet">
+            <li>単一選択のセレクトボックス: 文字列</li>
+          </ul>
+      </div>
+
+      <div class="uk-card uk-card-default uk-card-body uk-width-1-3@l">
+        <div class="uk-card-badge uk-label">dropdown</div>
+        <h2 class="uk-card-title">dropdown2</h3>
+          <p>Shift + Click　で複数選択が可能</p>
+          <select id='fruits2' class='uk-select' v-model='fruits' multiple>
+            <option value="grape">Grape</option>
+            <option value="apple">Apple</option>
+            <option value="kiwi">Kiwi</option>
+          </select>
+          <pre>{{ fruits }}</pre>
+          <hr class='uk-margin-small'>
+          <ul class="uk-list uk-list-bullet">
+            <li>複数選択のセレクトボックス: 配列</li>
+          </ul>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit-icons.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
