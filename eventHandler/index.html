@@ -14,92 +14,117 @@
     <div id="app" uk-grid>
       <div class="uk-card uk-card-default uk-card-body uk-width-1-3@l">
         <div class="uk-card-badge uk-label">$event</div>
-        <h2 class="uk-card-title">イベントハンドラに引数を設定</h3>
-          <p v-if='!isClicked1'>Hello Vue.js!!</p>
-          <p v-else v-bind:class='clsHappy'>{{ message1 }}</p>
-          <p><button class='uk-button' v-on:click="clickHandler1($event, 'We love Vue.js!!!')">Click1</button></p>
-          <hr class='uk-margin-small'>
-          <ul class="uk-list uk-list-bullet">
-            <li>eventと、任意の引数を共存させて渡したい時は…</li>
-            <li>Vueが準備している$eventを使う</li>
-            <li>arg1：$event</li>
-            <li>arg2: 任意</li>
-            <li>
-              <pre><code>v-on:click="Handler(arg1, arg2)"</code></pre>
-            </li>
-          </ul>
+        <h2 class="uk-card-title">イベントハンドラに引数を設定</h2>
+        <p v-if="!isClicked1">Hello Vue.js!!</p>
+        <p v-else v-bind:class="clsHappy">{{ message1 }}</p>
+        <p>
+          <button
+            class="uk-button"
+            v-on:click="clickHandler1($event, 'We love Vue.js!!!')"
+          >
+            Click1
+          </button>
+        </p>
+        <hr class="uk-margin-small" />
+        <ul class="uk-list uk-list-bullet">
+          <li>eventと、任意の引数を共存させて渡したい時は…</li>
+          <li>Vueが準備している$eventを使う</li>
+          <li>arg1：$event</li>
+          <li>arg2: 任意</li>
+          <li>
+            <pre><code>v-on:click="Handler(arg1, arg2)"</code></pre>
+          </li>
+        </ul>
       </div>
-      
+
       <div class="uk-card uk-card-default uk-card-body uk-width-1-3@l">
         <div class="uk-card-badge uk-label">.once</div>
-        <h2 class="uk-card-title">.onceオプション</h3>
-          <p v-if='!isClicked2'>Hello Vue.js!!</p>
-          <p v-else v-bind:class='clsHappy'>{{ message2 }}</p>
-          <p><button class='uk-button' v-on:click.once="clickHandler2()">Click2</button></p>
-          <hr class='uk-margin-small'>
-          <ul class="uk-list uk-list-bullet">
-            <li>ボタンクリック時に、一度だけ実行したい</li>
-            <li>
-              <pre><code>v-on:click.once="Handler()"</code></pre>
-            </li>
-          </ul>
+        <h2 class="uk-card-title">.onceオプション</h2>
+        <p v-if="!isClicked2">Hello Vue.js!!</p>
+        <p v-else v-bind:class="clsHappy">{{ message2 }}</p>
+        <p>
+          <button class="uk-button" v-on:click.once="clickHandler2()">
+            Click2
+          </button>
+        </p>
+        <hr class="uk-margin-small" />
+        <ul class="uk-list uk-list-bullet">
+          <li>ボタンクリック時に、一度だけ実行したい</li>
+          <li>
+            <pre><code>v-on:click.once="Handler()"</code></pre>
+          </li>
+        </ul>
       </div>
-      
+
       <div class="uk-card uk-card-default uk-card-body uk-width-1-3@l">
         <div class="uk-card-badge uk-label">.keyup</div>
-        <h2 class="uk-card-title">キー修飾子</h3>
-          <p>入力中に以下のキー押下でテキストがクリアされる<br>Esc　または　Space　または　↑</p>
-          <p>{{ message3 }}</p>
-          <p><input type="text" v-on:keyup.esc.space.up='clearText1' v-model='message3'></p>
-          <hr class='uk-margin-small'>
-          <ul class="uk-list uk-list-bullet">
-            <li>特定のキーを押したときの処理を指定できる</li>
-            <li>Escキーは「27」</li>
-            <li>
-              <pre><code>v-on:keyup.27="Handler"</code></pre>
-            </li>
-            <li>
-              <pre><code>v-on:keyup.esc="Handler"</code></pre>
-            </li>
-            <li>
-              <pre><code>v-on:keyup.esc.space.up="Handler"</code></pre>
-            </li>
-          </ul>
+        <h2 class="uk-card-title">キー修飾子</h2>
+        <p>
+          入力中に以下のキー押下でテキストがクリアされる<br />Esc　または　Space　または　↑
+        </p>
+        <p>{{ message3 }}</p>
+        <p>
+          <input
+            type="text"
+            v-on:keyup.esc.space.up="clearText1"
+            v-model="message3"
+          />
+        </p>
+        <hr class="uk-margin-small" />
+        <ul class="uk-list uk-list-bullet">
+          <li>特定のキーを押したときの処理を指定できる</li>
+          <li>Escキーは「27」</li>
+          <li>
+            <pre><code>v-on:keyup.27="Handler"</code></pre>
+          </li>
+          <li>
+            <pre><code>v-on:keyup.esc="Handler"</code></pre>
+          </li>
+          <li>
+            <pre><code>v-on:keyup.esc.space.up="Handler"</code></pre>
+          </li>
+        </ul>
       </div>
-      
+
       <div class="uk-card uk-card-default uk-card-body uk-width-1-3@l">
         <div class="uk-card-badge uk-label">.keyup</div>
-        <h2 class="uk-card-title">システム修飾子1</h3>
-          <p>入力中に以下のキー押下でテキストがクリアされる<br>ctrl + c</p>
-          <p>{{ message4 }}</p>
-          <p><input type="text" v-on:keyup.ctrl.67='clearText2' v-model='message4'></p>
-          <hr class='uk-margin-small'>
-          <ul class="uk-list uk-list-bullet">
-            <li>.ctrl</li>
-            <li>.alt</li>
-            <li>.shift</li>
-            <li>.meta => mac: cmd / pc: win key</li>
-            <li>
-              <pre><code>v-on:keyup.ctrl.67="Handler"</code></pre>
-            </li>
-          </ul>
+        <h2 class="uk-card-title">システム修飾子1</h2>
+        <p>入力中に以下のキー押下でテキストがクリアされる<br />ctrl + c</p>
+        <p>{{ message4 }}</p>
+        <p>
+          <input
+            type="text"
+            v-on:keyup.ctrl.67="clearText2"
+            v-model="message4"
+          />
+        </p>
+        <hr class="uk-margin-small" />
+        <ul class="uk-list uk-list-bullet">
+          <li>.ctrl</li>
+          <li>.alt</li>
+          <li>.shift</li>
+          <li>.meta => mac: cmd / pc: win key</li>
+          <li>
+            <pre><code>v-on:keyup.ctrl.67="Handler"</code></pre>
+          </li>
+        </ul>
       </div>
-      
+
       <div class="uk-card uk-card-default uk-card-body uk-width-1-3@l">
         <div class="uk-card-badge uk-label">.v-on:click</div>
-        <h2 class="uk-card-title">システム修飾子2</h3>
-          <p>下の、ClickMe!!と書かれたdivをshiftを押しながらクリック</p>
-          <div v-on:click.shift.once='clickHandler3'>Click Me!!!</div>
-          <hr class='uk-margin-small'>
-          <ul class="uk-list uk-list-bullet">
-            <li>.ctrl</li>
-            <li>.alt</li>
-            <li>.shift</li>
-            <li>.meta => mac: cmd / pc: win key</li>
-            <li>
-              <pre><code>v-on:click.shift="Handler"</code></pre>
-            </li>
-          </ul>
+        <h2 class="uk-card-title">システム修飾子2</h2>
+        <p>下の、ClickMe!!と書かれたdivをshiftを押しながらクリック</p>
+        <div v-on:click.shift.once="clickHandler3">Click Me!!!</div>
+        <hr class="uk-margin-small" />
+        <ul class="uk-list uk-list-bullet">
+          <li>.ctrl</li>
+          <li>.alt</li>
+          <li>.shift</li>
+          <li>.meta => mac: cmd / pc: win key</li>
+          <li>
+            <pre><code>v-on:click.shift="Handler"</code></pre>
+          </li>
+        </ul>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

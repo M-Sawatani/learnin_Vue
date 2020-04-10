@@ -14,78 +14,85 @@
     <div id="app" uk-grid>
       <div class="uk-card uk-card-default uk-card-body uk-width-1-3@l">
         <div class="uk-card-badge uk-label">v-bind</div>
-        <h2 class="uk-card-title">動的に切替える！</h3>
-          <p>
-            Hello
-            <span
-              class="text-prime bg-gray"
-              v-bind:class="{large: isLarge, 'text-danger': hasError}"
-              >Vue.js!!</span
-            >
-          </p>
-          <hr class='uk-margin-small'>
-          <ul class="uk-list uk-list-bullet">
-            <li>v-bindを使って、classを動的に切替える</li>
-            <li>class名にハイフンが含まれる場合、シングルクオーテーションで囲う</li>
-            <li>プレーンなclassとの共存</li>
-            <li>競合する場合は、あとから読み込まれたCSSが有効</li>
-          </ul>
+        <h2 class="uk-card-title">動的に切替える！</h2>
+        <p>
+          Hello
+          <span
+            class="text-prime bg-gray"
+            v-bind:class="{large: isLarge, 'text-danger': hasError}"
+            >Vue.js!!</span
+          >
+        </p>
+        <hr class="uk-margin-small" />
+        <ul class="uk-list uk-list-bullet">
+          <li>v-bindを使って、classを動的に切替える</li>
+          <li>
+            class名にハイフンが含まれる場合、シングルクオーテーションで囲う
+          </li>
+          <li>プレーンなclassとの共存</li>
+          <li>競合する場合は、あとから読み込まれたCSSが有効</li>
+        </ul>
       </div>
 
       <div class="uk-card uk-card-default uk-card-body uk-width-1-3@l">
         <div class="uk-card-badge uk-label">array</div>
-        <h2 class="uk-card-title">配列で指定！</h3>
-          <p>
-            Hello
-            <span v-bind:class="[largeClass, dangerClass]">Vue.js!!</span>
-          </p>
-          <hr class='uk-margin-small'>
-          <ul class="uk-list uk-list-bullet">
-            <li>v-bind:classを配列で指定することもできるよ！</li>
-          </ul>
+        <h2 class="uk-card-title">配列で指定！</h2>
+        <p>
+          Hello
+          <span v-bind:class="[largeClass, dangerClass]">Vue.js!!</span>
+        </p>
+        <hr class="uk-margin-small" />
+        <ul class="uk-list uk-list-bullet">
+          <li>v-bind:classを配列で指定することもできるよ！</li>
+        </ul>
       </div>
 
       <div class="uk-card uk-card-default uk-card-body uk-width-1-3@l">
         <div class="uk-card-badge uk-label">object</div>
-        <h2 class="uk-card-title">オブジェクトで指定！</h3>
-          <p>
-            Hello
-            <span v-bind:class="dangerClsObj">Vue.js!!</span>
-          </p>
-          <hr class='uk-margin-small'>
-          <ul class="uk-list uk-list-bullet">
-            <li>classの指定がずらずら多くなると見づらい…</li>
-            <li>Objectで指定してみましょう！</li>
-          </ul>
+        <h2 class="uk-card-title">オブジェクトで指定！</h2>
+        <p>
+          Hello
+          <span v-bind:class="dangerClsObj">Vue.js!!</span>
+        </p>
+        <hr class="uk-margin-small" />
+        <ul class="uk-list uk-list-bullet">
+          <li>classの指定がずらずら多くなると見づらい…</li>
+          <li>Objectで指定してみましょう！</li>
+        </ul>
       </div>
 
       <div class="uk-card uk-card-default uk-card-body uk-width-1-3@l">
         <div class="uk-card-badge uk-label">ternary operator</div>
-        <h2 class="uk-card-title">三項演算子を使って！</h3>
-          <p>
-            Hello
-            <span v-bind:class="[isLarge ? largeClsObj : '', dangerClsObj]">Vue.js!!</span>
-          </p>
-          <hr class='uk-margin-small'>
-          <ul class="uk-list uk-list-bullet">
-            <li>三項演算子で条件分岐</li>
-            <li>三項演算子と、オブジェクトでのclass指定を併用させたい時は、配列を利用
-              <pre><code>v-bind:class="[isLarge ? largeClsObj : '', dangerClsObj]"</code></pre>
-            </li>
-          </ul>
+        <h2 class="uk-card-title">三項演算子を使って！</h2>
+        <p>
+          Hello
+          <span v-bind:class="[isLarge ? largeClsObj : '', dangerClsObj]"
+            >Vue.js!!</span
+          >
+        </p>
+        <hr class="uk-margin-small" />
+        <ul class="uk-list uk-list-bullet">
+          <li>三項演算子で条件分岐</li>
+          <li>
+            三項演算子と、オブジェクトでのclass指定を併用させたい時は、配列を利用
+            <pre><code>v-bind:class="[isLarge ? largeClsObj : '', dangerClsObj]"</code></pre>
+          </li>
+        </ul>
       </div>
 
       <div class="uk-card uk-card-default uk-card-body uk-width-1-3@l">
         <div class="uk-card-badge uk-label">inline style</div>
-        <h2 class="uk-card-title">インラインスタイル</h3>
-          <p>
-            Hello
-            <span v-bind:style="styleObj">Vue.js!!</span>
-          </p>
-          <hr class='uk-margin-small'>
-          <ul class="uk-list uk-list-bullet">
-            <li>インラインでスタイルを指定するときはオブジェクトを渡すとスッキリ</li>
-          </ul>
+        <h2 class="uk-card-title">インラインスタイル</h2>
+        <p>
+          Hello
+          <span v-bind:style="styleObj">Vue.js!!</span>
+        </p>
+        <hr class="uk-margin-small" />
+        <ul class="uk-list uk-list-bullet">
+          <li>
+            インラインでスタイルを指定するときはオブジェクトを渡すとスッキリ
+          </li>
+        </ul>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
