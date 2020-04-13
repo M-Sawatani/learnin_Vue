@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Transition</title>
+  </head>
+  <body>
+    <h1>Transition</h1>
+    <div id="app" uk-grid>
+      <div class="uk-card uk-card-default uk-card-body uk-width-1-3@l">
+        <div class="uk-card-badge uk-label">transition</div>
+        <h2 class="uk-card-title">フェードインフェードアウト</h2>
+        <p><button v-on:click="show=!show">Change</button></p>
+        <transition mode="in-out" appear>
+          <p v-show="show">Hello Transition!</p>
+        </transition>
+        <hr class="uk-margin-small" />
+        <ul class="uk-list uk-list-bullet">
+          <li>
+            指定した秒数をかけて表示非表示して、完全に表示したらクラスが外れる
+          </li>
+          <li>v-showではなく、v-ifでもOK</li>
+        </ul>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit-icons.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
