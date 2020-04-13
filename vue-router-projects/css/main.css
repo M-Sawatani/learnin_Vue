@@ -1,0 +1,21 @@
+body {
+  background-color: #fef4f4;
+}
+
+div,
+h2,
+h3 {
+  padding: 20px;
+}
+
+.user {
+  background-color: #fc7676;
+}
+
+.profile {
+  background-color: #ffaaaa;
+}
+
+.posts {
+  background-color: #ffdddd;
+}
